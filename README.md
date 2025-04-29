@@ -119,6 +119,67 @@ The application requires the following Python libraries:
 - streamlit-folium
 - geopy
 
+## Deployment
+
+### Local Deployment with Docker
+
+1. Make sure Docker and Docker Compose are installed on your machine
+2. Clone the repository and navigate to the project directory
+3. Build and run the Docker container:
+   ```bash
+   docker-compose up --build
+   ```
+4. Access the application at http://localhost:8501
+
+### AWS Deployment Options
+
+#### Option 1: Deploy to AWS EC2 (with Docker)
+
+1. Create an EC2 instance (Amazon Linux 2 recommended)
+2. Set up security groups to allow inbound traffic on port 80 and 8501
+3. Connect to your instance via SSH
+4. Install AWS CodeDeploy agent:
+   ```bash
+   sudo yum update -y
+   sudo yum install -y ruby wget
+   wget https://aws-codedeploy-us-east-1.s3.amazonaws.com/latest/install
+   chmod +x ./install
+   sudo ./install auto
+   ```
+5. Use AWS CodeDeploy to deploy the application from your GitHub repository
+6. Access your application via the EC2 instance's public IP address
+
+#### Option 2: Streamlit Cloud (Recommended for Portfolios)
+
+1. Push your code to a GitHub repository
+2. Sign up for [Streamlit Cloud](https://streamlit.io/cloud)
+3. Deploy your app by connecting to your GitHub repository
+4. Embed the provided URL in your portfolio website using an iframe:
+   ```html
+   <iframe 
+     src="https://your-streamlit-app-url.streamlit.app/?embed=true" 
+     height="600" 
+     width="100%" 
+     style="border: none;">
+   </iframe>
+   ```
+
+#### Option 3: AWS Elastic Beanstalk
+
+1. Install the AWS EB CLI
+2. Initialize your project for Elastic Beanstalk:
+   ```bash
+   eb init -p docker cybersecurity-dashboard
+   ```
+3. Deploy your application:
+   ```bash
+   eb create cybersecurity-dashboard-env
+   ```
+4. Get the URL of your deployed app:
+   ```bash
+   eb open
+   ```
+
 ## Use Cases
 
 - **Security Operations Centers (SOC)**: Real-time monitoring of cyber threats
