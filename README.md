@@ -1,69 +1,161 @@
+# Sentinel | Cyber Resilience SIEM Dashboard
 
-# Cybersecurity Dashboard
+A comprehensive Streamlit-based cybersecurity dashboard providing real-time insights into security threats, system performance, and data integrity. This interactive dashboard offers a user-friendly interface for monitoring and analyzing security metrics.
 
-This is a **Streamlit-based web application** designed to visualize and analyze cybersecurity metrics, providing real-time insights into potential threats, security vulnerabilities, and overall system performance.
-
-The **Cybersecurity Dashboard** provides a user-friendly interface for both technical and non-technical users to monitor critical aspects of a system's security health.
+![Dashboard Preview](https://via.placeholder.com/800x450?text=Sentinel+Cyber+Dashboard+Preview)
 
 ## Features
 
-- **Real-Time Threat Monitoring**: Track and visualize cybersecurity threats, including malware, phishing attacks, and other vulnerabilities.
-- **Security Metrics**: Analyze key metrics such as failed login attempts, unauthorized access, network activity, and more.
-- **Data Visualization**: Interactive charts and graphs to help users better understand their system’s security status.
-- **Alerts and Notifications**: Displays warnings for critical threats and vulnerabilities that need immediate attention.
-- **Customizable Views**: Select specific time periods or metrics to analyze, giving users a detailed and personalized security overview.
+### 🎯 Threat Intelligence Analysis
+- **Threat Severity Distribution**: Visual breakdown of threats by severity level
+- **Threat Types Distribution**: Analysis of different types of attacks
+- **Geographic Threat Distribution**: Interactive world map showing attack origins
+- **Threat Activity Timeline**: Time-series visualization of threat patterns
+
+### 🛡️ Security Suite Overview
+- **Active Threats Metrics**: Real-time summary of active threats
+- **Critical Alerts**: Highlighting high-priority security concerns
+- **Attack Type Analysis**: Categorization of different attack methodologies
+- **Recent Threats Table**: Tabular view of most recent security incidents
+
+### 👤 Identity Management
+- **Login Success Rate**: Tracking authentication success metrics
+- **Account Lockout Monitoring**: Account access issue tracking
+- **Privilege Escalation Tracking**: Monitoring unauthorized permission changes
+- **Login Activity by Location**: Geographical analysis of login patterns
+- **Identity Activity Timeline**: Historical view of identity-related events
+
+### 📊 Data Quality Analysis
+- **Quality Metrics**: Dashboard tracking data completeness, uniqueness, and consistency
+- **Anomaly Detection**: Advanced machine learning algorithm to detect outliers
+- **Data Integrity Checks**: Validations to ensure data reliability
+- **Distribution Analysis**: Statistical analysis of security data patterns
+
+### 🔒 IPS/EDR Monitoring & Network Isolation
+- **Real-time Alerts**: Up-to-the-minute security notifications
+- **Network Isolation Controls**: Emergency controls to isolate network during breaches
+- **System Status Tracking**: Monitoring of protection system status
+
+## Project Structure
+
+```
+streamlit-cybersecurity-dashboard/
+│
+├── cybersecurity_dashboard.py   # Main application file
+├── requirements.txt             # Dependencies
+└── README.md                    # Documentation
+```
+
+### Main Components
+
+#### Utility Functions
+- `generate_alert()`: Creates simulated security alerts with varying severity
+- `check_data_quality()`: Performs integrity checks on security data
+- `detect_anomalies()`: Employs Isolation Forest algorithm for anomaly detection
+- `create_threat_map()`: Generates interactive geographical visualization of threats
+- `generate_threat_data()`: Creates realistic mock threat data
+- `generate_identity_data()`: Simulates identity-related security events
+
+#### Visualization Components
+- Pie charts for threat severity distribution
+- Bar charts for attack type analysis
+- Interactive world map using Folium
+- Time-series visualizations for trend analysis
+- Radar charts for data quality metrics
+- Histograms for statistical distribution analysis
 
 ## Technology Stack
 
-- **Frontend**: [Streamlit](https://streamlit.io/) – A Python library that allows easy creation of data applications with minimal code.
-- **Backend**: Python for data processing and analysis.
-- **Data Visualization**: `matplotlib` and `plotly` for generating interactive charts.
-- **Deployment**: The app is hosted on Streamlit Cloud.
+- **Frontend Framework**: [Streamlit](https://streamlit.io/)
+- **Data Processing**: Python (Pandas, NumPy)
+- **Visualization Libraries**:
+  - Plotly for interactive charts
+  - Matplotlib for static visualizations
+  - Folium for geographic mapping
+- **Machine Learning**: scikit-learn for anomaly detection
+- **Geolocation Services**: GeoPy for coordinate lookup
 
 ## Installation
 
-To run this application locally, follow these steps:
-
 1. Clone the repository:
-
    ```bash
-   git clone https://github.com/ajitagupta/cybersecurity-dashboard.git
+   git clone https://github.com/yourusername/cybersecurity-dashboard.git
+   cd streamlit-cybersecurity-dashboard
    ```
 
-2. Navigate into the project directory:
-
+2. Create a virtual environment:
    ```bash
-   cd cybersecurity-dashboard
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. Install the required dependencies:
-
+3. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Run the Streamlit app:
-
+4. Run the application:
    ```bash
    streamlit run cybersecurity_dashboard.py
    ```
 
-## How to Use
+5. Open the dashboard:
+   - Local URL: http://localhost:8501
+   - Network URL will be displayed in terminal
 
-1. Launch the application locally or access the live app [here](https://app-cybersecurity-dashboard.streamlit.app).
-2. Navigate through the dashboard to view real-time security metrics.
-3. Customize the data view by selecting different time frames or security metrics.
-4. The dashboard automatically updates as new data comes in, ensuring you always have the latest information.
+## Dependencies
 
-## Contributing
+The application requires the following Python libraries:
+- streamlit
+- pandas
+- numpy
+- matplotlib
+- scipy
+- seaborn
+- scikit-learn
+- plotly
+- pycountry
+- folium
+- streamlit-folium
+- geopy
 
-Contributions are welcome! If you want to improve this dashboard or fix any issues, feel free to submit a pull request.
+## Use Cases
+
+- **Security Operations Centers (SOC)**: Real-time monitoring of cyber threats
+- **IT Security Teams**: Analysis of security incidents and trends
+- **Executive Reporting**: High-level security status visualization
+- **Data Quality Teams**: Monitoring data integrity of security systems
+- **Incident Response**: Quick identification and isolation of security breaches
+
+## Data Sources
+
+The dashboard currently runs on simulated data that mimics real-world cybersecurity incidents. It can be connected to actual data sources like:
+- SIEM systems (Splunk, ELK Stack)
+- Firewall logs
+- IDS/IPS alerts
+- User authentication systems
+- Threat intelligence feeds
+
+## Future Enhancements
+
+- Integration with real-time security data sources
+- Machine learning-based threat prediction
+- Automated incident response workflows
+- Advanced user behavior analytics
+- Custom alerting and notification system
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgements
+## Acknowledgments
 
-- Thanks to the [Streamlit](https://streamlit.io/) community for building an amazing tool for building data-driven web apps.
-- Special thanks to all contributors and users who have helped improve this project.
+- The Streamlit team for creating an excellent framework for data applications
+- The cybersecurity community for insights on effective security monitoring
+- Icons and resources from various open-source projects
+
+## Contact
+
+Created by Nelson Foster and Mario Dukes, Co-Founders of ProKofa Solutions.
+
+ProKofa | Thrive Resilient®

@@ -2,3 +2,11 @@ streamlit
 pandas
 numpy
 matplotlib
+scipy
+seaborn
+scikit-learn
+plotly
+pycountry
+folium
+streamlit-folium
+geopy
